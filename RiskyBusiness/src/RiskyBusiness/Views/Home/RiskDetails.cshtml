@@ -13,15 +13,21 @@
 					<textarea class="mdl-textfield__input" type="text" rows="3" id="description"></textarea>
 					<label class="mdl-textfield__label" for="description">Description</label>
 				</div>
-				<paper-dropdown-menu label="Category">
-					<paper-dropdown class="dropdown">
-						<core-menu class="menu">
-							<paper-item>Communication</paper-item>
-							<paper-item>Legal</paper-item>
-							<paper-item>Technical</paper-item>
-						</core-menu>
-					</paper-dropdown>
-				</paper-dropdown-menu>
+				<div class="mdl-radio">
+					<h6>Category</h6>
+					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="communication">
+						<input class="mdl-radio__button" id="communication" name="category" type="radio" value="communication">
+						<span class="mdl-radio__label">Communication</span>
+					</label>
+					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="legal">
+						<input class="mdl-radio__button" id="legal" name="category" type="radio" value="legal">
+						<span class="mdl-radio__label">Legal</span>
+					</label>
+					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="technology">
+						<input class="mdl-radio__button" id="technology" name="category" type="radio" value="technology">
+						<span class="mdl-radio__label">Technology</span>
+					</label>
+				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 					<input class="mdl-textfield__input" type="text" id="raised-by" />
 					<label class="mdl-textfield__label" for="raised-by">Raised by</label>
@@ -44,9 +50,20 @@
 					<input class="mdl-textfield__input" type="text" id="owner" />
 					<label class="mdl-textfield__label" for="risk-id">Owner</label>
 				</div>
-				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="status" />
-					<label class="mdl-textfield__label" for="status">Status</label>
+				<div class="mdl-radio">
+					<h6>Status</h6>
+					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="open">
+						<input class="mdl-radio__button" id="open" name="status" type="radio" value="open">
+						<span class="mdl-radio__label">Open</span>
+					</label>
+					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="closed">
+						<input class="mdl-radio__button" id="closed" name="status" type="radio" value="closed">
+						<span class="mdl-radio__label">Closed</span>
+					</label>
+					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="monitor">
+						<input class="mdl-radio__button" id="monitor" name="status" type="radio" value="monitor">
+						<span class="mdl-radio__label">Monitor</span>
+					</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 					<input class="mdl-textfield__input" type="text" id="program-refs" />
@@ -56,8 +73,12 @@
 					<textarea class="mdl-textfield__input" type="text" rows="3" id="comments"></textarea>
 					<label class="mdl-textfield__label" for="comments">Comments</label>
 				</div>
+				<div class="mdl-cell--bottom">
+					<button id="thabutton" style="margin-top:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+						Save
+					</button>
+				</div>
 			</div>
-			
 		</div>
 	</form>
 </div>
