@@ -22,7 +22,7 @@ namespace RiskyBusiness
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
 
-            Risks_issues_DEVLContext con = new Risks_issues_DEVLContext();
+            
         }
 
         public IConfigurationRoot Configuration { get; set; }
@@ -33,12 +33,12 @@ namespace RiskyBusiness
             // Add MVC services to the services container.
             services.AddMvc();
 
-           // services.AddEntityFramework()
-           // .AddSqlServer()
-           // .AddDbContext<Risk>(options =>
-           // {
-           //     options.UseSqlServer(Configuration.Get("Data:ConnectionString"));
-           // });
+            services.AddEntityFramework()
+            .AddSqlServer()
+            .AddDbContext<Risks_issues_DEVLContext>(options =>
+            {
+                options.UseSqlServer(Configuration["Data:ConnectionString"]);
+            });
 
             // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
             // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.

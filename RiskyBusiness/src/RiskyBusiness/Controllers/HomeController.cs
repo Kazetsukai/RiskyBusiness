@@ -8,6 +8,13 @@ namespace RiskyBusiness.Controllers
 {
     public class HomeController : Controller
     {
+        private Risks_issues_DEVLContext _context;
+
+        public HomeController(Risks_issues_DEVLContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
             return View();
