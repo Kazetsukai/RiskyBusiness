@@ -44,8 +44,6 @@
 					<input class="mdl-textfield__input" type="text" id="last-change" />
 					<label class="mdl-textfield__label" for="last-change">Last change</label>
 				</div>
-			</div>
-			<div class="mdl-cell mdl-cell--6-col">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 					<input class="mdl-textfield__input" type="text" id="owner" />
 					<label class="mdl-textfield__label" for="risk-id">Owner</label>
@@ -73,12 +71,94 @@
 					<textarea class="mdl-textfield__input" type="text" rows="3" id="comments"></textarea>
 					<label class="mdl-textfield__label" for="comments">Comments</label>
 				</div>
-				<div class="mdl-cell--bottom">
-					<button id="thabutton" style="margin-top:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-						Save
-					</button>
-				</div>
 			</div>
+			<div class="mdl-cell mdl-cell--6-col">
+				<div class="mdl-card mdl-shadow--2dp through mdl-shadow--2dp">
+					<div class="mdl-card__title">
+						Pre-mitigation
+					</div>
+					<div class="mdl-card__supporting-text">
+						<div class="mdl-radio">
+							<h6 style="margin-top: 0px;">Impact</h6>
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-high">
+								<input class="mdl-radio__button" id="pre-high" name="pre-impact" type="radio" value="pre-high">
+								<span class="mdl-radio__label">High</span>
+							</label>
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-medium">
+								<input class="mdl-radio__button" id="pre-medium" name="pre-impact" type="radio" value="pre-med">
+								<span class="mdl-radio__label">Medium</span>
+							</label>
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-low">
+								<input class="mdl-radio__button" id="pre-low" name="pre-impact" type="radio" value="pre-low">
+								<span class="mdl-radio__label">Low</span>
+							</label>
+						</div>
+						<div class="mdl-radio">
+							<h6>Probability</h6>
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-unlikely">
+								<input class="mdl-radio__button" id="pre-unlikely" name="pre-prob" type="radio" value="pre-unlikely">
+								<span class="mdl-radio__label">Unlikely</span>
+							</label>
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-moderate">
+								<input class="mdl-radio__button" id="pre-moderate" name="pre-prob" type="radio" value="pre-moderate">
+								<span class="mdl-radio__label">Moderate</span>
+							</label>
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-likely">
+								<input class="mdl-radio__button" id="pre-likely" name="pre-prob" type="radio" value="pre-likely">
+								<span class="mdl-radio__label">Likely</span>
+							</label>
+						</div>
+						<h4>{Risk Level}</h4>
+					</div>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<textarea class="mdl-textfield__input" type="text" rows="3" id="mitigation"></textarea>
+					<label class="mdl-textfield__label" for="comments">Mitigation</label>
+				</div>
+					<div class="mdl-card mdl-shadow--2dp through mdl-shadow--2dp">
+						<div class="mdl-card__title">
+							Post-mitigation
+						</div>
+						<div class="mdl-card__supporting-text">
+							<div class="mdl-radio">
+								<h6 style="margin-top: 0px;">Impact</h6>
+								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-high">
+									<input class="mdl-radio__button" id="post-high" name="post-impact" type="radio" value="post-high">
+									<span class="mdl-radio__label">High</span>
+								</label>
+								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-medium">
+									<input class="mdl-radio__button" id="post-medium" name="post-impact" type="radio" value="post-med">
+									<span class="mdl-radio__label">Medium</span>
+								</label>
+								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-low">
+									<input class="mdl-radio__button" id="post-low" name="post-impact" type="radio" value="post-low">
+									<span class="mdl-radio__label">Low</span>
+								</label>
+							</div>
+							<div class="mdl-radio">
+								<h6>Probability</h6>
+								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-unlikely">
+									<input class="mdl-radio__button" id="post-unlikely" name="post-prob" type="radio" value="post-unlikely">
+									<span class="mdl-radio__label">Unlikely</span>
+								</label>
+								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-moderate">
+									<input class="mdl-radio__button" id="post-moderate" name="post-prob" type="radio" value="post-moderate">
+									<span class="mdl-radio__label">Moderate</span>
+								</label>
+								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-likely">
+									<input class="mdl-radio__button" id="post-likely" name="post-prob" type="radio" value="post-likely">
+									<span class="mdl-radio__label">Likely</span>
+								</label>
+							</div>
+							<h4>{Risk Level}</h4>
+						</div>
+					</div>
+					<div class="mdl-cell--bottom">
+						<button id="thabutton" style="margin-top:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+							Save
+						</button>
+					</div>
+				</div>
 		</div>
 	</form>
 </div>
