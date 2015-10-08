@@ -21,6 +21,7 @@ namespace RiskyBusiness
         public string pre_mitigation_impact { get; set; }
         public string pre_mitigation_probability { get; set; }
         public string pre_mitigation_risk_level { get; set; }
+        public string project_task_reference { get; set; }
         public string raised_by { get; set; }
         public string risk_descr { get; set; }
         public string risk_ref_id { get; set; }
@@ -28,5 +29,6 @@ namespace RiskyBusiness
 
         // Unable to add a Navigation Property referencing type Risks_link because of errors generating that EntityType.
         // Unable to add a Navigation Property referencing type Risks_link because of errors generating that EntityType.
+        public virtual risk_projects project_task_referenceNavigation { get; set; }
     }
 }
