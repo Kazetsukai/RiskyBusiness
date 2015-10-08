@@ -11,6 +11,10 @@
 		"material-design-lite": "*",
 		"paper-slider": "git://github.com/PolymerElements/paper-slider",
 		"requirejs": "*",
-		"knockout": "*"
+		"knockout": "*",
+		"paper-dropdown": "git://github.com/Polymer/paper-dropdown",
+    "paper-dropdown-menu": "git://github.com/PolymerElements/paper-dropdown-menu",
+		"core-menu": "git://github.com/Polymer/core-menu",
+		"webcomponentsjs": "*"
 	}
 }
