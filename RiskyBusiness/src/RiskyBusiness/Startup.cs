@@ -8,6 +8,7 @@ using Microsoft.Dnx.Runtime;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
+using Microsoft.Data.Entity;
 
 namespace RiskyBusiness
 {
@@ -29,6 +30,13 @@ namespace RiskyBusiness
         {
             // Add MVC services to the services container.
             services.AddMvc();
+
+           // services.AddEntityFramework()
+           // .AddSqlServer()
+           // .AddDbContext<Risk>(options =>
+           // {
+           //     options.UseSqlServer(Configuration.Get("Data:ConnectionString"));
+           // });
 
             // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
             // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.

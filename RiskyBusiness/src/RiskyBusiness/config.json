@@ -1,1 +1,5 @@
-{}
+{
+    "Data": {
+    "ConnectionString": "Server=(localdb)\\SQLEXPRESS2;Database=Risks_issues_DEVL;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}

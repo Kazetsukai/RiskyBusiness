@@ -1,0 +1,6 @@
+﻿C:\Projects\Git\RiskyBusiness\RiskyBusiness\src\RiskyBusiness\Models>dnx ef dbcontext scaffold "Data Source=localhost\SQLEXPRESS2;Initial Catalog=Risks_issues_DEVL;Integrated Security=True" EntityFramework.SqlServer
+
+
+NOTE mine is SQLEXPRESS2
+
+
