@@ -13,51 +13,80 @@
         <label class="mdl-textfield__label" for="raised-by">Raised By</label>
     </div>
 
-
     <div class="mdl-radio">
         <h6>Impact</h6>
-        <label for="low-impact" class="mdl-radio mdl-js-radio">
-            <input type="radio" id="low-impact" name="impact" value="low" class="mdl-radio__button">
-            <span class="mdl-radio__label">Low</span>
-        </label>
-        <label for="medium-impact" class="mdl-radio mdl-js-radio">
-            <input type="radio" id="medium-impact" name="impact" value="medium" class="mdl-radio__button">
-            <span class="mdl-radio__label">Medium</span>
-        </label>
-        <label for="high-impact" class="mdl-radio mdl-js-radio">
-            <input type="radio" id="high-impact" name="impact" value="high" class="mdl-radio__button">
-            <span class="mdl-radio__label">High</span>
-        </label>
+        <div>
+            <label for="low-impact" class="mdl-radio mdl-js-radio">
+                <input type="radio" id="low-impact" name="impact" value="1" class="mdl-radio__button">
+                <span class="mdl-radio__label">Low</span>
+            </label>
+        </div>
+        <div>
+            <label for="medium-impact" class="mdl-radio mdl-js-radio">
+                <input type="radio" id="medium-impact" name="impact" value="2" class="mdl-radio__button">
+                <span class="mdl-radio__label">Moderate</span>
+            </label>
+        </div>
+        <div>
+            <label for="high-impact" class="mdl-radio mdl-js-radio">
+                <input type="radio" id="high-impact" name="impact" value="3" class="mdl-radio__button">
+                <span class="mdl-radio__label">High</span>
+            </label>
+        </div>
      </div>
 
     <div class="mdl-radio">
         <h6>Probability</h6>
-        <label for="low" class="mdl-radio mdl-js-radio">
-            <input type="radio" id="low" name="probability" value="low" class="mdl-radio__button">
-            <span class="mdl-radio__label">Low</span>
-        </label>
-        <label for="medium" class="mdl-radio mdl-js-radio">
-            <input type="radio" id="medium" name="probability" value="medium" class="mdl-radio__button">
-            <span class="mdl-radio__label">Medium</span>
-        </label>
-        <label for="high" class="mdl-radio mdl-js-radio">
-            <input type="radio" id="high" name="probability" value="high" class="mdl-radio__button">
-            <span class="mdl-radio__label">High</span>
-        </label>
+        <div>
+            <label for="low" class="mdl-radio mdl-js-radio">
+                <input type="radio" id="low" name="probability" value="1" class="mdl-radio__button">
+                <span class="mdl-radio__label">Unlikely</span>
+            </label>
+        </div>
+        <div>
+            <label for="medium" class="mdl-radio mdl-js-radio">
+                <input type="radio" id="medium" name="probability" value="2" class="mdl-radio__button">
+                <span class="mdl-radio__label">Moderate</span>
+            </label>
+        </div>
+        <div>
+            <label for="high" class="mdl-radio mdl-js-radio">
+                <input type="radio" id="high" name="probability" value="3" class="mdl-radio__button">
+                <span class="mdl-radio__label">Likely</span>
+            </label>
+        </div>
+    </div>
+
+    <div>
+        <h5 id="risk-amount"></h5>
     </div>
 
 
         <button id="mahbutton" style="margin-top:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
             Add risk
         </button>
+
         <script>
             $(function () {
+                $('.mdl-radio > input').change(function () {
+                    var impact = $('input[name=impact]:checked', '#myForm').val()
+                    var probability = $('input[name=probability]:checked', '#myForm').val()
+                    
+                    var risk = (impact - 1) + (probability - 1);
+
+                    if (!isNaN(risk)) {
+                        words = new Array("Low", "Moderate", "High", "Extreme", "Incomprehensible");
+                        $('#risk-amount').text("Risk: " + words[risk])
+                    }
+                })
+
                 $('#mahbutton').click(function () {
                     var category = $('#category').val();
                     var risk = $('#risk').val()
                     var raisedBy = $('#raised-by').val()
                     var impact = $('input[name=impact]:checked', '#myForm').val()
                     var probability = $('input[name=probability]:checked', '#myForm').val()
+                    var riskLevel = $('#risk-amount').text().split(' ')[1];
                     $.ajax({
                         type: "POST",
                         url: "/Home/AddRisk",
@@ -66,7 +95,8 @@
                             risk_descr: risk,
                             raised_by: raisedBy,
                             pre_mitigation_impact: impact,
-                            pre_mitigation_probability: probability
+                            pre_mitigation_probability: probability,
+                            pre_mitigation_risk_level: riskLevel
                         },
                         success: function () { console.log('clickeds')},
                     });

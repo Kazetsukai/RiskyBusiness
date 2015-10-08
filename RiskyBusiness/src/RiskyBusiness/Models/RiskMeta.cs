@@ -19,22 +19,24 @@ namespace RiskyBusiness.Models
         public enum Impact
         {
             Low,
-            Medium,
+            Moderate,
             High
         };
 
         public enum Probability
         {
-            Low,
-            Medium,
-            High
+            Unlikely,
+            Moderate,
+            Likely
         };
 
         public enum RiskLevel
         {
             Low,
-            Medium,
-            High
+            Moderate,
+            High,
+            Extreme,
+            Incomprehensible
         };
 
         public enum Status

@@ -28,6 +28,7 @@ namespace RiskyBusiness.Controllers
             risk.date_raised = DateTime.Now;
             risk.owner = "Frodo";
             risk.status = "Open";
+            
             _context.Risks.Add(risk);
             _context.SaveChanges();
             return new JsonResult(risk);
