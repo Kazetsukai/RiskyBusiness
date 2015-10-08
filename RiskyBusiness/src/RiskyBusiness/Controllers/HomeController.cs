@@ -19,7 +19,13 @@ namespace RiskyBusiness.Controllers
         {
             return View();
         }
-        
+
+        [HttpPost]
+        public IActionResult AddRisk(Risks risk)
+        {
+            return new JsonResult(risk);
+        }
+
         public IActionResult Error()
         {
             return View("~/Views/Shared/Error.cshtml");
