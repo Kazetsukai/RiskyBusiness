@@ -1,40 +1,56 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model  List<RiskyBusiness.Risks>
+@{
+	ViewData["Title"] = "Home Page";
 }
 
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer demo-layout-transparent">
+	<script src="~/lib/requirejs/require.js"></script>
+	<script>
+		require.config({
+			paths: {
+				'ko': 'lib/knockout/dist/knockout',
+				'risk-list-vm': 'js/risk-list-vm'
+			}
+		});
 
-    <header class="mdl-layout__header mdl-layout__header--transparent">
-        <div class="mdl-layout__header-row">
-            <!-- Title -->
-            <span class="mdl-layout-title">Risky Business</span>
-            <!-- Add spacer, to align navigation to the right -->
-            <div class="mdl-layout-spacer"></div>
-            <!-- Navigation -->
-            @*<nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                    <a class="mdl-navigation__link" href="">Link</a>
-                </nav>*@
-        </div>
-    </header>
+		define('risk-list', [], function () {
+			//ew
+			return @Html.Raw(Json.Serialize(Model));
+		});
 
-    <div class="mdl-layout__drawer">
-        @Html.Partial("AddRisk")
-    </div>
+		require(['risk-list-vm'], function (riskList) {
+			riskList();
+		});
+	</script>
+	<header class="mdl-layout__header mdl-layout__header--transparent">
+		<div class="mdl-layout__header-row">
+			<!-- Title -->
+			<span class="mdl-layout-title">Risky Business</span>
+			<!-- Add spacer, to align navigation to the right -->
+			<div class="mdl-layout-spacer"></div>
+			<!-- Navigation -->
+			@*<nav class="mdl-navigation">
+					<a class="mdl-navigation__link" href="">Link</a>
+					<a class="mdl-navigation__link" href="">Link</a>
+					<a class="mdl-navigation__link" href="">Link</a>
+					<a class="mdl-navigation__link" href="">Link</a>
+				</nav>*@
+		</div>
+	</header>
 
-    <main class="mdl-layout__content">
+	<div class="mdl-layout__drawer">
+		@Html.Partial("AddRisk")
+	</div>
 
+	<main class="mdl-layout__content">
 
-        <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--12-col">
-                @Html.Partial("RiskDetails")
-            </div>
-            <div class="mdl-cell mdl-cell--12-col">
-                @Html.Partial("RiskList")
-            </div>
-
-        </div>
-    </main>
+		<div class="mdl-grid">
+			<div class="mdl-cell mdl-cell--12-col">
+				@Html.Partial("RiskDetails")
+			</div>
+			<div class="mdl-cell mdl-cell--12-col">
+				@Html.Partial("RiskList")
+			</div>
+		</div>
+	</main>
 </div>

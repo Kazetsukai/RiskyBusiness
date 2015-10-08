@@ -29,6 +29,6 @@ namespace RiskyBusiness
 
         // Unable to add a Navigation Property referencing type Risks_link because of errors generating that EntityType.
         // Unable to add a Navigation Property referencing type Risks_link because of errors generating that EntityType.
-        public virtual risk_projects project_task_referenceNavigation { get; set; }
+        //public virtual risk_projects project_task_referenceNavigation { get; set; }
     }
 }
