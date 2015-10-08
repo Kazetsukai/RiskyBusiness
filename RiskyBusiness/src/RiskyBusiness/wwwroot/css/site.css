@@ -33,24 +33,27 @@ textarea {
 	}
 }
 
-.risks-list-table .Low {
-	background-color: greenyellow;
+.Low {
+	background-color: #43A047;
+	color:white !important;
 }
 
-.risks-list-table .Moderate {
-	background-color: cornflowerblue;
+.Moderate {
+	background-color: #2196F3;
+	color:white !important;
 }
 
-.risks-list-table .High {
-	background-color: orange;
+.High {
+	background-color: #FFC107;
+	color:black !important;
 }
 
-.risks-list-table .Extreme {
-	background-color: red;
-	color:white;
+.Extreme {
+	background-color: #D32F2F;
+	color:white !important;
 }
 
-.risks-list-table .Incomprehensible {
+.Incomprehensible {
 	background-color: black;
-	color:white;
+	color:white !important;
 }

@@ -2,7 +2,7 @@
 	<div class="mdl-card__title mdl-card--expand">
 		<h2 class="mdl-card__title-text">Risk Level</h2>
 	</div>
-	<form action="#">
+	<form id="risk-details" action="#">
 		<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--6-col">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -81,34 +81,36 @@
 						<div class="mdl-radio">
 							<h6 style="margin-top: 0px;">Impact</h6>
 							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-high">
-								<input class="mdl-radio__button" id="pre-high" name="pre-impact" type="radio" value="pre-high">
+								<input class="mdl-radio__button" id="pre-high" name="pre-impact" type="radio" value="3">
 								<span class="mdl-radio__label">High</span>
 							</label>
 							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-medium">
-								<input class="mdl-radio__button" id="pre-medium" name="pre-impact" type="radio" value="pre-med">
+								<input class="mdl-radio__button" id="pre-medium" name="pre-impact" type="radio" value="2">
 								<span class="mdl-radio__label">Medium</span>
 							</label>
 							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-low">
-								<input class="mdl-radio__button" id="pre-low" name="pre-impact" type="radio" value="pre-low">
+								<input class="mdl-radio__button" id="pre-low" name="pre-impact" type="radio" value="1">
 								<span class="mdl-radio__label">Low</span>
 							</label>
 						</div>
 						<div class="mdl-radio">
 							<h6>Probability</h6>
-							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-unlikely">
-								<input class="mdl-radio__button" id="pre-unlikely" name="pre-prob" type="radio" value="pre-unlikely">
-								<span class="mdl-radio__label">Unlikely</span>
-							</label>
-							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-moderate">
-								<input class="mdl-radio__button" id="pre-moderate" name="pre-prob" type="radio" value="pre-moderate">
-								<span class="mdl-radio__label">Moderate</span>
-							</label>
 							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-likely">
-								<input class="mdl-radio__button" id="pre-likely" name="pre-prob" type="radio" value="pre-likely">
+								<input class="mdl-radio__button" id="pre-likely" name="pre-prob" type="radio" value="3">
 								<span class="mdl-radio__label">Likely</span>
 							</label>
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-moderate">
+								<input class="mdl-radio__button" id="pre-moderate" name="pre-prob" type="radio" value="2">
+								<span class="mdl-radio__label">Moderate</span>
+							</label>
+							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-unlikely">
+								<input class="mdl-radio__button" id="pre-unlikely" name="pre-prob" type="radio" value="1">
+								<span class="mdl-radio__label">Unlikely</span>
+							</label>
 						</div>
-						<h4>{Risk Level}</h4>
+						<div id="pre-risk-amount-card" style="min-height:0; margin-top: 20px; display:none;" class="mdl-card mdl-shadow--2dp through mdl-shadow--2dp">
+							<h4 style="text-align:center;" id="pre-risk-amount"></h4>
+						</div>
 					</div>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -123,35 +125,38 @@
 							<div class="mdl-radio">
 								<h6 style="margin-top: 0px;">Impact</h6>
 								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-high">
-									<input class="mdl-radio__button" id="post-high" name="post-impact" type="radio" value="post-high">
+									<input class="mdl-radio__button" id="post-high" name="post-impact" type="radio" value="3">
 									<span class="mdl-radio__label">High</span>
 								</label>
 								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-medium">
-									<input class="mdl-radio__button" id="post-medium" name="post-impact" type="radio" value="post-med">
+									<input class="mdl-radio__button" id="post-medium" name="post-impact" type="radio" value="2">
 									<span class="mdl-radio__label">Medium</span>
 								</label>
 								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-low">
-									<input class="mdl-radio__button" id="post-low" name="post-impact" type="radio" value="post-low">
+									<input class="mdl-radio__button" id="post-low" name="post-impact" type="radio" value="1">
 									<span class="mdl-radio__label">Low</span>
 								</label>
 							</div>
 							<div class="mdl-radio">
 								<h6>Probability</h6>
-								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-unlikely">
-									<input class="mdl-radio__button" id="post-unlikely" name="post-prob" type="radio" value="post-unlikely">
-									<span class="mdl-radio__label">Unlikely</span>
-								</label>
-								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-moderate">
-									<input class="mdl-radio__button" id="post-moderate" name="post-prob" type="radio" value="post-moderate">
-									<span class="mdl-radio__label">Moderate</span>
-								</label>
 								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-likely">
-									<input class="mdl-radio__button" id="post-likely" name="post-prob" type="radio" value="post-likely">
+									<input class="mdl-radio__button" id="post-likely" name="post-prob" type="radio" value="3">
 									<span class="mdl-radio__label">Likely</span>
 								</label>
+								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-moderate">
+									<input class="mdl-radio__button" id="post-moderate" name="post-prob" type="radio" value="2">
+									<span class="mdl-radio__label">Moderate</span>
+								</label>
+								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-unlikely">
+									<input class="mdl-radio__button" id="post-unlikely" name="post-prob" type="radio" value="1">
+									<span class="mdl-radio__label">Unlikely</span>
+								</label>
 							</div>
-							<h4>{Risk Level}</h4>
-						</div>
+							<br />
+							<div id="post-risk-amount-card" style="min-height:0; margin-top: 20px; display:none;" class="mdl-card mdl-shadow--2dp through mdl-shadow--2dp">
+								<h4 style="text-align:center;" id="post-risk-amount"></h4>
+							</div>
+						</div>	
 					</div>
 					<div class="mdl-cell--bottom">
 						<button id="thabutton" style="margin-top:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
@@ -162,3 +167,47 @@
 		</div>
 	</form>
 </div>
+
+<script>
+	$(function () {
+		var words = new Array("Low", "Moderate", "High", "Extreme", "Incomprehensible");
+
+		$('.mdl-radio > input').change(function () {
+			var preImpact = $('input[name=pre-impact]:checked', '#risk-details').val()
+			var preProbability = $('input[name=pre-prob]:checked', '#risk-details').val()
+
+			var preRisk = (preImpact - 1) + (preProbability - 1);
+
+			if (!isNaN(preRisk)) {
+				$('#pre-risk-amount-card').show();
+				$("#pre-risk-amount-card").removeClass();
+				 $('#pre-risk-amount-card').addClass("mdl-card");
+				 $('#pre-risk-amount-card').addClass("mdl-shadow--2dp");
+				 $('#pre-risk-amount-card').addClass("through");
+				 $('#pre-risk-amount-card').addClass("mdl-shadow--2dp");
+				 $('#pre-risk-amount-card').addClass(words[preRisk]);
+				 $('#pre-risk-amount').text("Risk: " + words[preRisk]);
+			} else {
+				$('#pre-risk-amount-card').hide();
+			}
+
+			var postImpact = $('input[name=post-impact]:checked', '#risk-details').val()
+			var postProbability = $('input[name=post-prob]:checked', '#risk-details').val()
+
+			var postRisk = (postImpact - 1) + (postProbability - 1);
+
+			if (!isNaN(postRisk)) {
+				$('#post-risk-amount-card').show();
+				$("#post-risk-amount-card").removeClass();
+				$('#post-risk-amount-card').addClass("mdl-card");
+				$('#post-risk-amount-card').addClass("mdl-shadow--2dp");
+				$('#post-risk-amount-card').addClass("through");
+				$('#post-risk-amount-card').addClass("mdl-shadow--2dp");
+				$('#post-risk-amount-card').addClass(words[postRisk]);
+				$('#post-risk-amount').text("Risk: " + words[postRisk]);
+			} else {
+				$('#post-risk-amount-card').hide();
+			}
+		})
+	});
+</script>
