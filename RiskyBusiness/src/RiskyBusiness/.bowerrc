@@ -1,3 +1,5 @@
 {
-  "directory": "wwwroot/lib"
+  "directory": "wwwroot/lib",
+  "proxy":"http://tmgproxy.livestock.org.nz:8080",
+  "https-proxy":"http://tmgproxy.livestock.org.nz:8080"
 }

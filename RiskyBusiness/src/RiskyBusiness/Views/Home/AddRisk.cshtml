@@ -1,1 +1,57 @@
-﻿Add risk here plz
+﻿<form action="#" style="padding: 15px;">
+    <h4>Add a risk</h4>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="risk" />
+        <label class="mdl-textfield__label" for="risk">Risk</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="category" />
+        <label class="mdl-textfield__label" for="category">Category</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input class="mdl-textfield__input" type="text" id="raised-by" />
+        <label class="mdl-textfield__label" for="raised-by">Raised By</label>
+    </div>
+
+
+    <div class="mdl-radio">
+        <h6>Impact</h6>
+        <label for="low-impact" class="mdl-radio mdl-js-radio">
+            <input type="radio" id="low-impact" name="impact" value="on" class="mdl-radio__button">
+            <span class="mdl-radio__label">Low</span>
+        </label>
+        <label for="medium-impact" class="mdl-radio mdl-js-radio">
+            <input type="radio" id="medium-impact" name="impact" value="on" class="mdl-radio__button">
+            <span class="mdl-radio__label">Medium</span>
+        </label>
+        <label for="high-impact" class="mdl-radio mdl-js-radio">
+            <input type="radio" id="high-impact" name="impact" value="on" class="mdl-radio__button">
+            <span class="mdl-radio__label">High</span>
+        </label>
+     </div>
+
+    <div>
+        <paper-slider></paper-slider>
+    </div>
+
+    <div class="mdl-radio">
+        <h6>Probability</h6>
+        <label for="low" class="mdl-radio mdl-js-radio">
+            <input type="radio" id="low" name="flash" value="on" class="mdl-radio__button">
+            <span class="mdl-radio__label">Low</span>
+        </label>
+        <label for="medium" class="mdl-radio mdl-js-radio">
+            <input type="radio" id="medium" name="flash" value="on" class="mdl-radio__button">
+            <span class="mdl-radio__label">Medium</span>
+        </label>
+        <label for="high" class="mdl-radio mdl-js-radio">
+            <input type="radio" id="high" name="flash" value="on" class="mdl-radio__button">
+            <span class="mdl-radio__label">High</span>
+        </label>
+    </div>
+
+
+        <button style="margin-top:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+            Add risk
+        </button>
+</form>
