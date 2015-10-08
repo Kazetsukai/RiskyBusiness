@@ -7,7 +7,7 @@ namespace RiskyBusiness
 {
     public class Risks
     {
-        public int risk_key { get; set; }
+        public int risk_key /*business*/ { get; set; }
         public string category { get; set; }
         public string comments { get; set; }
         public DateTime? date_raised { get; set; }
