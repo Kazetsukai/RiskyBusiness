@@ -9,9 +9,34 @@
 					<input class="mdl-textfield__input" type="text" id="risk-id" disabled/>
 					<label class="mdl-textfield__label" for="risk-id">Risk Id</label>
 				</div>
-				<div class="mdl-textfield mdl-js-textfield">
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 					<textarea class="mdl-textfield__input" type="text" rows="3" id="description"></textarea>
 					<label class="mdl-textfield__label" for="description">Description</label>
+				</div>
+				<paper-dropdown-menu label="Category">
+					<paper-dropdown class="dropdown">
+						<core-menu class="menu">
+							<paper-item>Communication</paper-item>
+							<paper-item>Legal</paper-item>
+							<paper-item>Technical</paper-item>
+						</core-menu>
+					</paper-dropdown>
+				</paper-dropdown-menu>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" id="raised-by" />
+					<label class="mdl-textfield__label" for="raised-by">Raised by</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" id="date-raised" />
+					<label class="mdl-textfield__label" for="date-raised">Date raised</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" id="last-reviewed" />
+					<label class="mdl-textfield__label" for="last-reviewed">Last reviewed</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" id="last-change" />
+					<label class="mdl-textfield__label" for="last-change">Last change</label>
 				</div>
 			</div>
 			<div class="mdl-cell mdl-cell--6-col">
@@ -19,17 +44,20 @@
 					<input class="mdl-textfield__input" type="text" id="owner" />
 					<label class="mdl-textfield__label" for="risk-id">Owner</label>
 				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" id="status" />
+					<label class="mdl-textfield__label" for="status">Status</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<input class="mdl-textfield__input" type="text" id="program-refs" />
+					<label class="mdl-textfield__label" for="program-refs">Program refs</label>
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+					<textarea class="mdl-textfield__input" type="text" rows="3" id="comments"></textarea>
+					<label class="mdl-textfield__label" for="comments">Comments</label>
+				</div>
 			</div>
-			<paper-dropdown-menu label="Your favorite pastry">
-				<paper-dropdown class="dropdown">
-					<core-menu class="menu">
-						<paper-item>Croissant</paper-item>
-						<paper-item>Donut</paper-item>
-						<paper-item>Financier</paper-item>
-						<paper-item>Madeleine</paper-item>
-					</core-menu>
-				</paper-dropdown>
-			</paper-dropdown-menu>
+			
 		</div>
 	</form>
 </div>

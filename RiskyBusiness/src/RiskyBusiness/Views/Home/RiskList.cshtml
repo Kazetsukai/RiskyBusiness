@@ -1,34 +1,35 @@
 ﻿<div class="mdl-card mdl-shadow--2dp">
-	<div class="mdl-card__title mdl-card--expand">
-		<h2 class="mdl-card__title-text">Partial AS Bro</h2>
-	</div>
+	@*<div class="mdl-card__title mdl-card--expand">
+			<h2 class="mdl-card__title-text">Partial AS Bro</h2>
+		</div>*@
 	<div class="mdl-card__supporting-text">
-		<table class="risks-list-table mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+		<table class="risks-list-table mdl-data-table mdl-js-data-table mdl-shadow--2dp">
 			<thead>
 				<tr>
-					<th class="mdl-data-table__cell--non-numeric">Risk Id</th>
-					<th>Description</th>
-					<th>Mitigation</th>
-					<th>Date</th>
-					<th>Level</th>
+					<!-- ko foreach: headers-->
+					<th data-bind="click: $parent.sort">
+						<span data-bind="text: title"></span>
+						<iron-icon icon="icons:arrow-drop-down" data-bind="visible: sorted"></iron-icon>
+					</th>
+					<!-- /ko -->
 				</tr>
 			</thead>
 			<tbody>
 				<!-- ko foreach: risks -->
 				<tr>
-					<th class="mdl-data-table__cell--non-numeric" data-bind="text: risk_key"></th>
+					<th data-bind="text: risk_key"></th>
 					<th data-bind="text: risk_descr"></th>
 					<th data-bind="text: mitigation_plan"></th>
 					<th data-bind="text: date_raised"></th>
-					<th data-bind="text: pre_mitigation_risk_level"></th> <!-- this needs to change -->
+					<th data-bind="text: pre_mitigation_risk_level"></th> @*this needs to change*@
 				</tr>
 				<!-- /ko -->
 			</tbody>
 		</table>
 	</div>
-	<div class="mdl-card__actions mdl-card--border">
-		<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-			Click me!
-		</a>
-	</div>
+	@*<div class="mdl-card__actions mdl-card--border">
+			<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+				Click me!
+			</a>
+		</div>*@
 </div>

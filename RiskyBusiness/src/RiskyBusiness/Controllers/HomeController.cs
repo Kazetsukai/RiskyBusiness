@@ -22,17 +22,16 @@ namespace RiskyBusiness.Controllers
 			return View(risks);
 		}
 
-        [HttpPost]
-        public IActionResult AddRisk(Risks risk)
-        {
-            risk.date_raised = DateTime.Now;
-            risk.owner = "Frodo";
-            risk.status = "Open";
-            
-            _context.Risks.Add(risk);
-            _context.SaveChanges();
-            return new JsonResult(risk);
-        }
+		[HttpPost]
+		public IActionResult AddRisk(Risks risk)
+		{
+			risk.date_raised = DateTime.Now;
+			risk.owner = "Frodo";
+			risk.status = "Open";
+			_context.Risks.Add(risk);
+			_context.SaveChanges();
+			return new JsonResult(risk);
+		}
 
 		public IActionResult Error()
 		{
