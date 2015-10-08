@@ -1,6 +1,56 @@
 ﻿USE [Risks_issues_DEVL]
 GO
+/****** Object:  Table [dbo].[risk_projects]    Script Date: 09/10/2015 9:28:04 a.m. ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+SET ANSI_PADDING ON
+GO
+CREATE TABLE [dbo].[risk_projects](
+       [project_task_reference] [varchar](20) NOT NULL,
+       [project_header_reference] [varchar](50) NULL,
+       [business_unit_code] [varchar](16) NULL,
+       [business_unit_descr] [varchar](60) NULL,
+       [status] [varchar](30) NULL,
+       [capitalise_ind] [smallint] NULL,
+       [priority] [varchar](30) NULL,
+       [affected_system] [varchar](50) NULL,
+       [on_hold] [char](1) NULL,
+       [work_stage] [varchar](35) NULL,
+       [review] [varchar](35) NULL,
+       [one_line_descr] [varchar](512) NULL,
+       [task_details] [varchar](8000) NULL,
+       [reporting] [varchar](30) NULL,
+       [create_date] [date] NULL,
+       [target_date] [date] NULL,
+       [close_date] [date] NULL,
+       [account_manager] [varchar](50) NOT NULL,
+       [analyst] [varchar](50) NULL,
+       [author] [varchar](50) NULL,
+       [budget_owner] [varchar](50) NULL,
+       [created_by] [varchar](50) NULL,
+       [estimated_by] [varchar](50) NULL,
+       [person_with] [varchar](50) NULL,
+       [programmer] [varchar](50) NULL,
+       [project_manager] [varchar](50) NULL,
+       [work_completed_by] [varchar](50) NULL,
+       [elapsed_days] [int] NULL,
+       [analysis_estimate] [decimal](7, 1) NULL,
+       [actual_hours_recorded] [decimal](7, 1) NULL,
+       [closed_elapsed_days] [int] NULL,
+       [quantity] [int] NULL,
+       [dss_update_time] [datetime] NULL,
+CONSTRAINT [PK_risk_projects] PRIMARY KEY CLUSTERED 
+(
+       [project_task_reference] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
+GO
+SET ANSI_PADDING OFF
+GO
+/****** Object:  Table [dbo].[Risks]    Script Date: 09/10/2015 9:28:04 a.m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -26,6 +76,7 @@ CREATE TABLE [dbo].[Risks](
        [category] [varchar](20) NULL,
        [status] [varchar](20) NULL,
        [comments] [varchar](8000) NULL,
+       [project_task_reference] [varchar](20) NULL,
 CONSTRAINT [PK_Risks] PRIMARY KEY CLUSTERED 
 (
        [risk_key] ASC
@@ -35,7 +86,7 @@ CONSTRAINT [PK_Risks] PRIMARY KEY CLUSTERED
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[Risks_link]    Script Date: 09/10/2015 7:54:02 a.m. ******/
+/****** Object:  Table [dbo].[Risks_link]    Script Date: 09/10/2015 9:28:04 a.m. ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -45,6 +96,11 @@ CREATE TABLE [dbo].[Risks_link](
        [risk_to] [int] NULL
 ) ON [PRIMARY]
 
+GO
+ALTER TABLE [dbo].[Risks]  WITH CHECK ADD  CONSTRAINT [FK_Risks_project] FOREIGN KEY([project_task_reference])
+REFERENCES [dbo].[risk_projects] ([project_task_reference])
+GO
+ALTER TABLE [dbo].[Risks] CHECK CONSTRAINT [FK_Risks_project]
 GO
 ALTER TABLE [dbo].[Risks_link]  WITH CHECK ADD  CONSTRAINT [FK_Risks_link_Risks_from] FOREIGN KEY([risk_from])
 REFERENCES [dbo].[Risks] ([risk_key])

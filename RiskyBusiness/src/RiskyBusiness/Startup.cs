@@ -21,6 +21,8 @@ namespace RiskyBusiness
                 .AddJsonFile("config.json")
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
+
+            Risks_issues_DEVLContext con = new Risks_issues_DEVLContext();
         }
 
         public IConfigurationRoot Configuration { get; set; }
