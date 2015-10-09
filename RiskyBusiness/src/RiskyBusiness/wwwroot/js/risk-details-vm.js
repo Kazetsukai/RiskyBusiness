@@ -24,6 +24,22 @@
 		self.postRiskProbability = ko.observable(null);
 		self.postRiskLevel = ko.observable(null);
 
+		var array = ['Low', 'Medium', 'High'];
+
+		var words = new Array("Low", "Moderate", "High", "Extreme", "Extreme");
+
+		var convertToInt = function (rawr) {
+			return array.indexOf(rawr) + 1;
+		};
+
+		var convertToString = function (rawr) {
+			return array[rawr - 1];
+		};
+
+		var convertToWords = function (rawr) {
+			return words[rawr - 1];
+		};
+
 		self.save = function () {
 			self.loaded.riskId(self.riskId());
 			self.loaded.descripton(self.descripton());
@@ -38,12 +54,13 @@
 			self.loaded.comments(self.comments());
 			self.loaded.mitigation(self.mitigation());
 
-			self.loaded.preRiskImpact(self.preRiskImpact());
-			self.loaded.preRiskProbability(self.preRiskProbability());
-			self.loaded.preRiskLevel(self.preRiskImpact() - 1 + self.preRiskProbability() - 1);
-			self.loaded.postRiskImpact(self.postRiskImpact());
-			self.loaded.postRiskProbability(self.postRiskProbability());
-			self.loaded.postRiskLevel(self.postRiskImpact() - 1 + self.postRiskProbability() - 1);
+			self.loaded.preRiskImpact(convertToString(self.preRiskImpact()));
+			self.loaded.preRiskProbability(convertToString(self.preRiskProbability()));
+			self.loaded.postRiskImpact(convertToString(self.postRiskImpact()));
+			self.loaded.postRiskProbability(convertToString(self.postRiskProbability()));
+
+			self.loaded.preRiskLevel(convertToWords((self.preRiskImpact() - 1) + (self.preRiskProbability() - 1)));
+			self.loaded.postRiskLevel(convertToWords((self.postRiskImpact() - 1) + (self.postRiskProbability() - 1)));
 
 			//clear?
 
@@ -65,12 +82,13 @@
 			self.comments(risk.comments());
 			self.mitigation(risk.mitigation());
 
-			self.preRiskImpact(risk.preRiskImpact());
-			self.preRiskProbability(risk.preRiskProbability());
-			self.preRiskLevel(risk.preRiskLevel());
-			self.postRiskImpact(risk.postRiskImpact());
-			self.postRiskProbability(risk.postRiskProbability());
-			self.postRiskLevel(risk.postRiskLevel());
+			self.preRiskImpact(convertToInt(risk.preRiskImpact()));
+			self.preRiskProbability(convertToInt(risk.preRiskProbability()));
+			self.postRiskImpact(convertToInt(risk.postRiskImpact()));
+			self.postRiskProbability(convertToInt(risk.postRiskProbability()));
+
+			self.preRiskLevel((self.preRiskImpact() - 1) + (self.preRiskProbability() - 1));
+			self.postRiskLevel((self.postRiskImpact() - 1) + (self.postRiskProbability() - 1));
 		};
 
 		ko.applyBindings(self, document.getElementById('risk-details'));

@@ -22,27 +22,27 @@
 			switch (sortKey) {
 				case 'id':
 					self.risks.sort(function (a, b) {
-						return sortFunc(a.risk_key, b.risk_key);
+						return sortFunc(a.riskId(), b.riskId());
 					});
 					break;
 				case 'desc':
 					self.risks.sort(function (a, b) {
-						return sortFunc(a.risk_descr, b.risk_descr);
+						return sortFunc(a.descripton(), b.descripton());
 					});
 					break;
 				case 'mitigation':
 					self.risks.sort(function (a, b) {
-						return sortFunc(a.mitigation_plan, b.mitigation_plan);
+						return sortFunc(a.mitigation(), b.mitigation());
 					});
 					break;
 				case 'date':
 					self.risks.sort(function (a, b) {
-						return sortFunc(a.date_raised, b.date_raised);
+						return sortFunc(a.dateRaised(), b.dateRaised());
 					});
 					break;
 				case 'level':
 					self.risks.sort(function (a, b) {
-						return sortFunc(a.pre_mitigation_risk_level, b.pre_mitigation_risk_level);
+						return sortFunc(a.preRiskLevel(), b.preRiskLevel());
 					});
 					break;
 			}
