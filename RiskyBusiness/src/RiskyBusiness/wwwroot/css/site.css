@@ -22,3 +22,19 @@
 	background-color: black;
 	color:white !important;
 }
+
+.risks-list-table{
+	width: 100%
+}
+
+.risks-list-table td,
+.risks-list-table th
+{
+	text-align:center;
+}
+
+.risks-list-table td.left,
+.risks-list-table th.left
+{
+	text-align:left;
+}

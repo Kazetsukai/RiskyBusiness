@@ -40,10 +40,10 @@
 
 			self.loaded.preRiskImpact(self.preRiskImpact());
 			self.loaded.preRiskProbability(self.preRiskProbability());
-			self.loaded.preRiskLevel(self.preRiskLevel());
+			self.loaded.preRiskLevel(self.preRiskImpact() - 1 + self.preRiskProbability() - 1);
 			self.loaded.postRiskImpact(self.postRiskImpact());
 			self.loaded.postRiskProbability(self.postRiskProbability());
-			self.loaded.postRiskLevel(self.postRiskLevel());
+			self.loaded.postRiskLevel(self.postRiskImpact() - 1 + self.postRiskProbability() - 1);
 
 			//clear?
 
