@@ -6,69 +6,69 @@
 		<div class="mdl-grid">
 			<div class="mdl-cell mdl-cell--6-col">
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="risk-id" disabled/>
+					<input class="mdl-textfield__input" type="text" id="risk-id" disabled data-bind="value: riskId" />
 					<label class="mdl-textfield__label" for="risk-id">Risk Id</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<textarea class="mdl-textfield__input" type="text" rows="3" id="description"></textarea>
+					<textarea class="mdl-textfield__input" type="text" rows="3" id="description" data-bind="value: descripton" ></textarea>
 					<label class="mdl-textfield__label" for="description">Description</label>
 				</div>
 				<div class="mdl-radio">
 					<h6>Category</h6>
 					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="communication">
-						<input class="mdl-radio__button" id="communication" name="category" type="radio" value="communication">
+						<input class="mdl-radio__button" id="communication" name="category" type="radio" value="communication" data-bind="value: category" >
 						<span class="mdl-radio__label">Communication</span>
 					</label>
 					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="legal">
-						<input class="mdl-radio__button" id="legal" name="category" type="radio" value="legal">
+						<input class="mdl-radio__button" id="legal" name="category" type="radio" value="legal" data-bind="value: category" >
 						<span class="mdl-radio__label">Legal</span>
 					</label>
 					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="technology">
-						<input class="mdl-radio__button" id="technology" name="category" type="radio" value="technology">
+						<input class="mdl-radio__button" id="technology" name="category" type="radio" value="technology" data-bind="value: category" >
 						<span class="mdl-radio__label">Technology</span>
 					</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="raised-by" />
+					<input class="mdl-textfield__input" type="text" id="raised-by" data-bind="value: raisedBy"  />
 					<label class="mdl-textfield__label" for="raised-by">Raised by</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="date-raised" />
+					<input class="mdl-textfield__input" type="text" id="date-raised" data-bind="value: dateRaised"  />
 					<label class="mdl-textfield__label" for="date-raised">Date raised</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="last-reviewed" />
+					<input class="mdl-textfield__input" type="text" id="last-reviewed" data-bind="value: lastReviewDate"  />
 					<label class="mdl-textfield__label" for="last-reviewed">Last reviewed</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="last-change" />
+					<input class="mdl-textfield__input" type="text" id="last-change"  data-bind="value: nextReviewDate" />
 					<label class="mdl-textfield__label" for="last-change">Last change</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="owner" />
+					<input class="mdl-textfield__input" type="text" id="owner"  data-bind="value: owner" />
 					<label class="mdl-textfield__label" for="risk-id">Owner</label>
 				</div>
 				<div class="mdl-radio">
 					<h6>Status</h6>
 					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="open">
-						<input class="mdl-radio__button" id="open" name="status" type="radio" value="open">
+						<input class="mdl-radio__button" id="open" name="status" type="radio" value="open" data-bind="value: status" >
 						<span class="mdl-radio__label">Open</span>
 					</label>
 					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="closed">
-						<input class="mdl-radio__button" id="closed" name="status" type="radio" value="closed">
+						<input class="mdl-radio__button" id="closed" name="status" type="radio" value="closed" data-bind="value: status" >
 						<span class="mdl-radio__label">Closed</span>
 					</label>
 					<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="monitor">
-						<input class="mdl-radio__button" id="monitor" name="status" type="radio" value="monitor">
+						<input class="mdl-radio__button" id="monitor" name="status" type="radio" value="monitor" data-bind="value: status" >
 						<span class="mdl-radio__label">Monitor</span>
 					</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<input class="mdl-textfield__input" type="text" id="program-refs" />
+					<input class="mdl-textfield__input" type="text" id="program-refs"  data-bind="value: programRefs" />
 					<label class="mdl-textfield__label" for="program-refs">Program refs</label>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<textarea class="mdl-textfield__input" type="text" rows="3" id="comments"></textarea>
+					<textarea class="mdl-textfield__input" type="text" rows="3" id="comments" data-bind="value: comments" ></textarea>
 					<label class="mdl-textfield__label" for="comments">Comments</label>
 				</div>
 			</div>
@@ -81,30 +81,30 @@
 						<div class="mdl-radio">
 							<h6 style="margin-top: 0px;">Impact</h6>
 							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-high">
-								<input class="mdl-radio__button" id="pre-high" name="pre-impact" type="radio" value="3">
+								<input class="mdl-radio__button" id="pre-high" name="pre-impact" type="radio" value="3" data-bind="value: preRiskImpact" >
 								<span class="mdl-radio__label">High</span>
 							</label>
 							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-medium">
-								<input class="mdl-radio__button" id="pre-medium" name="pre-impact" type="radio" value="2">
+								<input class="mdl-radio__button" id="pre-medium" name="pre-impact" type="radio" value="2" data-bind="value: preRiskImpact" >
 								<span class="mdl-radio__label">Medium</span>
 							</label>
 							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-low">
-								<input class="mdl-radio__button" id="pre-low" name="pre-impact" type="radio" value="1">
+								<input class="mdl-radio__button" id="pre-low" name="pre-impact" type="radio" value="1" data-bind="value: preRiskImpact" >
 								<span class="mdl-radio__label">Low</span>
 							</label>
 						</div>
 						<div class="mdl-radio">
 							<h6>Probability</h6>
 							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-likely">
-								<input class="mdl-radio__button" id="pre-likely" name="pre-prob" type="radio" value="3">
+								<input class="mdl-radio__button" id="pre-likely" name="pre-prob" type="radio" value="3" data-bind="value: preRiskProbability" >
 								<span class="mdl-radio__label">Likely</span>
 							</label>
 							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-moderate">
-								<input class="mdl-radio__button" id="pre-moderate" name="pre-prob" type="radio" value="2">
+								<input class="mdl-radio__button" id="pre-moderate" name="pre-prob" type="radio" value="2" data-bind="value: preRiskProbability" >
 								<span class="mdl-radio__label">Moderate</span>
 							</label>
 							<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="pre-unlikely">
-								<input class="mdl-radio__button" id="pre-unlikely" name="pre-prob" type="radio" value="1">
+								<input class="mdl-radio__button" id="pre-unlikely" name="pre-prob" type="radio" value="1" data-bind="value: preRiskProbability" >
 								<span class="mdl-radio__label">Unlikely</span>
 							</label>
 						</div>
@@ -114,7 +114,7 @@
 					</div>
 				</div>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-					<textarea class="mdl-textfield__input" type="text" rows="3" id="mitigation"></textarea>
+					<textarea class="mdl-textfield__input" type="text" rows="3" id="mitigation" data-bind="value: mitigation" ></textarea>
 					<label class="mdl-textfield__label" for="comments">Mitigation</label>
 				</div>
 					<div class="mdl-card mdl-shadow--2dp through mdl-shadow--2dp">
@@ -125,30 +125,30 @@
 							<div class="mdl-radio">
 								<h6 style="margin-top: 0px;">Impact</h6>
 								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-high">
-									<input class="mdl-radio__button" id="post-high" name="post-impact" type="radio" value="3">
+									<input class="mdl-radio__button" id="post-high" name="post-impact" type="radio" value="3" data-bind="value: postRiskImpact" >
 									<span class="mdl-radio__label">High</span>
 								</label>
 								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-medium">
-									<input class="mdl-radio__button" id="post-medium" name="post-impact" type="radio" value="2">
+									<input class="mdl-radio__button" id="post-medium" name="post-impact" type="radio" value="2" data-bind="value: postRiskImpact" >
 									<span class="mdl-radio__label">Medium</span>
 								</label>
 								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-low">
-									<input class="mdl-radio__button" id="post-low" name="post-impact" type="radio" value="1">
+									<input class="mdl-radio__button" id="post-low" name="post-impact" type="radio" value="1" data-bind="value: postRiskImpact" >
 									<span class="mdl-radio__label">Low</span>
 								</label>
 							</div>
 							<div class="mdl-radio">
 								<h6>Probability</h6>
 								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-likely">
-									<input class="mdl-radio__button" id="post-likely" name="post-prob" type="radio" value="3">
+									<input class="mdl-radio__button" id="post-likely" name="post-prob" type="radio" value="3" data-bind="value: postRiskProbability" >
 									<span class="mdl-radio__label">Likely</span>
 								</label>
 								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-moderate">
-									<input class="mdl-radio__button" id="post-moderate" name="post-prob" type="radio" value="2">
+									<input class="mdl-radio__button" id="post-moderate" name="post-prob" type="radio" value="2" data-bind="value: postRiskProbability" >
 									<span class="mdl-radio__label">Moderate</span>
 								</label>
 								<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="post-unlikely">
-									<input class="mdl-radio__button" id="post-unlikely" name="post-prob" type="radio" value="1">
+									<input class="mdl-radio__button" id="post-unlikely" name="post-prob" type="radio" value="1" data-bind="value: postRiskProbability" >
 									<span class="mdl-radio__label">Unlikely</span>
 								</label>
 							</div>
@@ -159,7 +159,7 @@
 						</div>	
 					</div>
 					<div class="mdl-cell--bottom">
-						<button id="thabutton" style="margin-top:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+						<button id="thabutton" style="margin-top:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" data-bind="click: save">
 							Save
 						</button>
 					</div>

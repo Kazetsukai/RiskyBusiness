@@ -1,5 +1,5 @@
 ﻿define(['ko', 'risk-list'], function (ko, risks) {
-	return function () {
+	return function (detailsVM) {
 		var self = {};
 
 		self.headers = [
@@ -55,7 +55,11 @@
 			self.currentlySorted.sorted(true);
 		};
 
-		self.risks = ko.observableArray(risks);
+		self.risks = risks;
+
+		self.edit = function (risk) {
+			detailsVM.load(risk);
+		};
 
 		ko.applyBindings(self, document.getElementsByClassName('risks-list-table')[0]);
 	};

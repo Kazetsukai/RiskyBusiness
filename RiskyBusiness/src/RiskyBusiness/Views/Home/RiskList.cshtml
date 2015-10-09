@@ -16,12 +16,12 @@
 			</thead>
 			<tbody>
 				<!-- ko foreach: risks -->
-				<tr>
-					<th data-bind="text: risk_key"></th>
-					<th data-bind="text: risk_descr"></th>
-					<th data-bind="text: mitigation_plan"></th>
-					<th data-bind="text: date_raised"></th>
-					<th data-bind="text: pre_mitigation_risk_level, css: pre_mitigation_risk_level"></th> @*this needs to change*@
+				<tr data-bind="click: $parent.edit">
+					<th data-bind="text: riskId"></th>
+					<th data-bind="text: descripton"></th>
+					<th data-bind="text: mitigation"></th>
+					<th data-bind="text: dateRaised"></th>
+					<th data-bind="text: preRiskLevel, css: preRiskLevel"></th> @*this needs to change*@
 				</tr>
 				<!-- /ko -->
 			</tbody>
