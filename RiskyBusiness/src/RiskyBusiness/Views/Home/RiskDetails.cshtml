@@ -162,6 +162,9 @@
 						<button id="thabutton" style="margin-top:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" data-bind="click: save">
 							Save
 						</button>
+						<button id="wtf" style="margin-top:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+							Copy for status report
+						</button>
 					</div>
 				</div>
 		</div>
@@ -170,7 +173,7 @@
 
 <script>
 	$(function () {
-		var words = new Array("Low", "Moderate", "High", "Extreme", "Incomprehensible");
+		var words = new Array("Low", "Moderate", "High", "Extreme", "Extreme");
 
 		$('.mdl-radio > input').change(function () {
 			var preImpact = $('input[name=pre-impact]:checked', '#risk-details').val()
@@ -181,12 +184,12 @@
 			if (!isNaN(preRisk)) {
 				$('#pre-risk-amount-card').show();
 				$("#pre-risk-amount-card").removeClass();
-				 $('#pre-risk-amount-card').addClass("mdl-card");
-				 $('#pre-risk-amount-card').addClass("mdl-shadow--2dp");
-				 $('#pre-risk-amount-card').addClass("through");
-				 $('#pre-risk-amount-card').addClass("mdl-shadow--2dp");
-				 $('#pre-risk-amount-card').addClass(words[preRisk]);
-				 $('#pre-risk-amount').text("Risk: " + words[preRisk]);
+				$('#pre-risk-amount-card').addClass("mdl-card");
+				$('#pre-risk-amount-card').addClass("mdl-shadow--2dp");
+				$('#pre-risk-amount-card').addClass("through");
+				$('#pre-risk-amount-card').addClass("mdl-shadow--2dp");
+				$('#pre-risk-amount-card').addClass(words[preRisk]);
+				$('#pre-risk-amount').text("Risk: " + words[preRisk]);
 			} else {
 				$('#pre-risk-amount-card').hide();
 			}
