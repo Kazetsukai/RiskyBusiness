@@ -58,9 +58,10 @@
     </div>
 
     <div>
-        <h5 id="risk-amount"></h5>
+		<div id="risk-amount-card" style="min-height:0; margin-top: 20px; display:none;" class="mdl-card mdl-shadow--2dp through mdl-shadow--2dp">
+			<h5 style="text-align:center;" id="risk-amount"></h5>
+		</div>
     </div>
-
 
         <button id="mahbutton" style="margin-top:20px" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
             Add risk
@@ -68,6 +69,8 @@
 
         <script>
             $(function () {
+            	var words = new Array("Low", "Moderate", "High", "Extreme", "Incomprehensible");
+
                 $('.mdl-radio > input').change(function () {
                     var impact = $('input[name=impact]:checked', '#myForm').val()
                     var probability = $('input[name=probability]:checked', '#myForm').val()
@@ -75,7 +78,13 @@
                     var risk = (impact - 1) + (probability - 1);
 
                     if (!isNaN(risk)) {
-                        words = new Array("Low", "Moderate", "High", "Extreme", "Incomprehensible");
+                    	$('#risk-amount-card').show();
+                    	$("#risk-amount-card").removeClass();
+                    	$('#risk-amount-card').addClass("mdl-card");
+                    	$('#risk-amount-card').addClass("mdl-shadow--2dp");
+                    	$('#risk-amount-card').addClass("through");
+                    	$('#risk-amount-card').addClass("mdl-shadow--2dp");
+                    	$('#risk-amount-card').addClass(words[risk]);
                         $('#risk-amount').text("Risk: " + words[risk])
                     }
                 })
