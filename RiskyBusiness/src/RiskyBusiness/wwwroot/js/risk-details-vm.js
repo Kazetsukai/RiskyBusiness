@@ -4,25 +4,25 @@
 
 		self.loaded = null;
 
-		self.riskId = ko.observable(null);
-		self.descripton = ko.observable(null);
-		self.category = ko.observable(null);
-		self.raisedBy = ko.observable(null);
-		self.dateRaised = ko.observable(null);
-		self.lastReviewDate = ko.observable(null);
-		self.nextReviewDate = ko.observable(null);
-		self.owner = ko.observable(null);
-		self.status = ko.observable(null);
-		self.programRefs = ko.observable(null);
-		self.comments = ko.observable(null);
-		self.mitigation = ko.observable(null);
+		self.riskId = ko.observable(' ');
+		self.descripton = ko.observable(' ');
+		self.category = ko.observable(' ');
+		self.raisedBy = ko.observable(' ');
+		self.dateRaised = ko.observable(' ');
+		self.lastReviewDate = ko.observable(' ');
+		self.nextReviewDate = ko.observable(' ');
+		self.owner = ko.observable(' ');
+		self.status = ko.observable(' ');
+		self.programRefs = ko.observable(' ');
+		self.comments = ko.observable(' ');
+		self.mitigation = ko.observable(' ');
 
-		self.preRiskImpact = ko.observable(null);
-		self.preRiskProbability = ko.observable(null);
-		self.preRiskLevel = ko.observable(null);
-		self.postRiskImpact = ko.observable(null);
-		self.postRiskProbability = ko.observable(null);
-		self.postRiskLevel = ko.observable(null);
+		self.preRiskImpact = ko.observable(0);
+		self.preRiskProbability = ko.observable(0);
+		self.preRiskLevel = ko.observable(0);
+		self.postRiskImpact = ko.observable(0);
+		self.postRiskProbability = ko.observable(0);
+		self.postRiskLevel = ko.observable(0);
 
 		var array = ['Low', 'Medium', 'High'];
 
