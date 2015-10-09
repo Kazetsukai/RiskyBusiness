@@ -1,23 +1,25 @@
-﻿<table class="risks-list-table mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-	<thead>
-		<tr>
-			<!-- ko foreach: headers-->
-			<th data-bind="click: $parent.sort">
-				<span data-bind="text: title"></span>
-				<iron-icon icon="icons:arrow-drop-down" data-bind="visible: sorted"></iron-icon>
-			</th>
+﻿<div class="mdl-card mdl-shadow--2dp">
+	<table class="risks-list-table mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+		<thead>
+			<tr>
+				<!-- ko foreach: headers-->
+				<th data-bind="click: $parent.sort">
+					<span data-bind="text: title"></span>
+					<iron-icon icon="icons:arrow-drop-down" data-bind="visible: sorted"></iron-icon>
+				</th>
+				<!-- /ko -->
+			</tr>
+		</thead>
+		<tbody>
+			<!-- ko foreach: risks -->
+			<tr data-bind="click: $parent.edit">
+				<th data-bind="text: riskId"></th>
+				<th data-bind="text: descripton" class="left"></th>
+				<th data-bind="text: mitigation" class="left"></th>
+				<th data-bind="text: dateRaised"></th>
+				<th data-bind="text: preRiskLevel, css: preRiskLevel"></th> @*this needs to change*@
+			</tr>
 			<!-- /ko -->
-		</tr>
-	</thead>
-	<tbody>
-		<!-- ko foreach: risks -->
-		<tr data-bind="click: $parent.edit">
-			<th data-bind="text: riskId"></th>
-			<th data-bind="text: descripton" class="left"></th>
-			<th data-bind="text: mitigation" class="left"></th>
-			<th data-bind="text: dateRaised"></th>
-			<th data-bind="text: preRiskLevel, css: preRiskLevel"></th> @*this needs to change*@
-		</tr>
-		<!-- /ko -->
-	</tbody>
-</table>
+		</tbody>
+	</table>
+</div>
